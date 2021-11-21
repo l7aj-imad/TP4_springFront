@@ -1,0 +1,11 @@
+.container {
+  margin: 25px auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}

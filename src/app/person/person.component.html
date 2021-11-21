@@ -1,0 +1,10 @@
+<div style="margin-left: 20px">
+  <p class="fw-bold">{{person.prenom}} {{person.nom}}</p>
+  <p>{{person.adr}}</p>
+  <p>{{person.tel}}</p>
+  <p>{{person.email}}</p>
+  <button (click)="openU=true">Modifier</button>
+  <button (click)="onDelete(person.id)">Supprimer</button>
+</div>
+
+<app-personform (save)="save($event)" (close)="openU = false" [open]="openU" [person]="person"></app-personform>

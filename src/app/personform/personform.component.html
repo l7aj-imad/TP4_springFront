@@ -1,0 +1,30 @@
+<div class="cdk-overlay-container" *ngIf="open" (click)="onClick($event)">
+  <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>
+  <div class="cdk-global-overlay-wrapper" style="justify-content: center; align-items: center;">
+    <div class="cdk-overlay-pane" style="max-width: 80vw; width: 400px; position: static;" #el>
+      <div class="cdk-visually-hidden"></div>
+      <div class="mat-dialog-container" style="transform: none;">
+        <div [formGroup]="_form">
+          <label>prenom :</label>
+          <input type="text" class="form-control" formControlName="prenom" />
+          <p class="text-danger" *ngIf="_form.get('prenom')?.dirty && _form.get('prenom')?.hasError('required')"> prenom requis</p>
+          <label>nom :</label>
+          <input type="text" class="form-control" formControlName="nom" />
+          <p class="text-danger" *ngIf="_form.get('nom')?.dirty && _form.get('nom')?.hasError('required')"> nom requis</p>
+          <label>adr :</label>
+          <input type="text" class="form-control" formControlName="adr" />
+          <p class="text-danger" *ngIf="_form.get('adr')?.dirty && _form.get('adr')?.hasError('required')"> adr requise</p>
+          <label>tel :</label>
+          <input type="text" class="form-control" formControlName="tel" />
+          <p class="text-danger" *ngIf="_form.get('tel')?.dirty && _form.get('tel')?.hasError('required')"> tel requise</p>
+          <label>email :</label>
+          <input type="text" class="form-control" formControlName="email" />
+          <p class="text-danger" *ngIf="_form.get('email')?.dirty && _form.get('email')?.hasError('required')"> email requise</p>
+          <button (click)="onSave(_form.value)"
+                  [disabled]="_form.invalid">Valider</button>
+        </div>
+      </div>
+      <div class="cdk-visually-hidden"></div>
+    </div>
+  </div>
+</div>
